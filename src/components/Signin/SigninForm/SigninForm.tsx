@@ -1,13 +1,13 @@
 import React, { FormEvent } from 'react';
 
 interface State {
-    username: string;
+    email: string;
     password: string;
 }
 
 export class SigninForm extends React.Component {
     state: State = {
-        username: '',
+        email: '',
         password: ''
     };
 
@@ -25,8 +25,8 @@ export class SigninForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" onChange={this.handleChange}/>
+                <label htmlFor="email">Email</label>
+                <input type="text" name="email" onChange={this.handleChange}/>
 
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" onChange={this.handleChange}/>

@@ -1,7 +1,6 @@
 import React, { FormEvent } from 'react';
 
 interface State {
-    username: string;
     email: string;
     password: string;
     repeatPassword: string;
@@ -10,7 +9,6 @@ interface State {
 export class SignupForm extends React.Component {
     state: State = {
         email: '',
-        username: '',
         password: '',
         repeatPassword: ''
     };
@@ -23,8 +21,9 @@ export class SignupForm extends React.Component {
 
     handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(this.state);
-        console.log(this.state.password === this.state.repeatPassword);
+        if(this.state.password === this.state.repeatPassword) {
+            console.log(this.state);
+        }
     }
 
     render() {
@@ -32,9 +31,6 @@ export class SignupForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" onChange={this.handleChange}/>
-
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" onChange={this.handleChange}/>
 
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" onChange={this.handleChange}/>

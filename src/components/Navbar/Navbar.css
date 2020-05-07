@@ -1,18 +1,41 @@
 nav {
     width: 100%;
     padding: 1rem;
-}
-nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
+    background: #73c700;
+    color: white;
+}
+
+div.left,
+div.right {
+    flex: 1;
+    display: flex;
     align-items: center;
-    padding: 0;
-    margin: 0;
 }
-nav ul li {
-    margin: 0.25rem;
+
+nav div.left {
+    justify-content: flex-start;
 }
-nav ul li a {
+nav div.right {
+    justify-content: flex-end;
+}
+
+a.logo{
     text-decoration: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 0.25rem;
+}
+
+a.nav-item {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    background: white;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+a.nav-item:not(:first-of-type) {
+    margin-left: 0.5rem;
 }

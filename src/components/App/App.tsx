@@ -9,11 +9,11 @@ import { createBrowserHistory } from 'history';
 
 function App() {
   const history = createBrowserHistory();
+  let authorized = false; // Need to come from a state(that checks localStorage?)
   return (
     <div className="App">
       <Router history={history}>
-        <Navbar />
-
+        <Navbar authorized={authorized} />
         <Switch>
           <Route path="/signin">
             <Signin />
