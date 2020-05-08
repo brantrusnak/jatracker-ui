@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 interface State {
     email: string;
@@ -7,7 +7,7 @@ interface State {
 }
 
 export const SignupForm: React.FC = () => {
-    const [form, setForm] = React.useState<State>({email: '', password: '', repeatPassword: ''});
+    const [form, setForm] = useState<State>({email: '', password: '', repeatPassword: ''});
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setForm({...form, [event.target.name]: event.target.value});
