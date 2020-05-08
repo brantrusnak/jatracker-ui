@@ -6,41 +6,32 @@ interface State {
     repeatPassword: string;
 }
 
-export class SignupForm extends React.Component {
-    state: State = {
-        email: '',
-        password: '',
-        repeatPassword: ''
-    };
+export const SignupForm: React.FC = () => {
+    const [form, setForm] = React.useState<State>({email: '', password: '', repeatPassword: ''});
 
-    handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({...form, [event.target.name]: event.target.value});
     }
 
-    handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if(this.state.password === this.state.repeatPassword) {
-            console.log(this.state);
+        if (form.password === form.repeatPassword) {
+            console.log(form);
         }
     }
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" onChange={this.handleChange}/>
+    return (
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" onChange={handleChange} />
 
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" onChange={this.handleChange}/>
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" onChange={handleChange} />
 
-                <label htmlFor="repeatPassword">Repeat Password</label>
-                <input type="password" name="repeatPassword" onChange={this.handleChange}/>
+            <label htmlFor="repeatPassword">Repeat Password</label>
+            <input type="password" name="repeatPassword" onChange={handleChange} />
 
-                <input type="submit" value="Submit"/>
-            </form>
-        )
-    }
-
-};
+            <input type="submit" value="Submit" />
+        </form>
+    )
+}

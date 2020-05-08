@@ -1,34 +1,16 @@
 import React from 'react';
 import './App.css';
-import { Navbar } from '../Navbar/Navbar';
-import { Router, Switch, Route } from 'react-router-dom';
-import { Signin } from '../Signin/Signin';
-import { Signup } from '../Signup/Signup';
-import { Landing } from '../Landing/Landing';
 import { createBrowserHistory } from 'history';
+import { UnauthorizedApp } from './UnauthorizedApp/UnauthorizedApp';
+import { AuthorizedApp } from './AuthorizedApp/AuthorizedApp';
 
-function App() {
+export const App: React.FC = () => {
+  const [auth, setAuth] = React.useState(false);
   const history = createBrowserHistory();
-  let authorized = false; // Need to come from a state(that checks localStorage?)
   return (
     <div className="App">
-      <Router history={history}>
-        <Navbar authorized={authorized} />
-        <Switch>
-          <Route path="/signin">
-            <Signin />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/">
-            <Landing />
-          </Route>
-        </Switch>
-        
-      </Router>
+      <button onClick={() => setAuth(!auth)}>Switch</button>
+      {auth === true ? <AuthorizedApp history={history} /> : <UnauthorizedApp history={history} />}
     </div>
-  );
+  )
 }
-
-export default App;
