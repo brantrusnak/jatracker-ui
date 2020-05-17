@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from '../../context/AuthContext';
+import { Navbar } from '../Navbar/Navbar';
 import './App.css';
-import { createBrowserHistory } from 'history';
-import { UnauthorizedApp } from './UnauthorizedApp/UnauthorizedApp';
-import { AuthorizedApp } from './AuthorizedApp/AuthorizedApp';
+import { Routes } from '../Routes/Routes';
+import { JobsProvider } from '../../context/JobsContext';
 
 export const App: React.FC = () => {
-  const [auth, setAuth] = useState(false);
-  const history = createBrowserHistory();
-  return (
-    <div className="App">
-      <button onClick={() => setAuth(!auth)}>Switch</button>
-      {auth === true ? <AuthorizedApp history={history} /> : <UnauthorizedApp history={history} />}
-    </div>
-  )
+    return (
+        <Router>
+            <AuthProvider>
+                <JobsProvider>
+                    <Navbar />
+                    <Routes />
+                </JobsProvider>
+            </AuthProvider>
+        </Router>
+    )
 }

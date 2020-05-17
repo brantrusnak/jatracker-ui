@@ -37,6 +37,6 @@ a.nav-item {
     font-size: 1rem;
 }
 
-a.nav-item:not(:first-of-type) {
-    margin-left: 1rem;
+div.right .nav-item:not(:last-child){
+    margin-right: 1rem;
 }

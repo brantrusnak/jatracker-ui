@@ -1,4 +1,6 @@
 export interface User {
+    _id: { "$oid": string; };
     email: string;
-    password: string;
+    display_name: string;
+    jobs: {$oid: string}[]
 }
