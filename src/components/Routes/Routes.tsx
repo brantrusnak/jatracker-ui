@@ -6,13 +6,13 @@ import { Signup } from '../Signup/Signup';
 import { Landing } from '../Landing/Landing';
 import { AuthorizedRoute } from './AuthorizedRoute';
 import { UnauthorizedRoute } from './UnauthorizedRoute';
-import { User } from '../User/User';
+import { Settings } from '../Settings/Settings';
 
 export const Routes: React.FC = () => {
     return (
         <Switch>
             <AuthorizedRoute path='/jobs'><Jobs /></AuthorizedRoute>
-            <AuthorizedRoute path='/user'><User /></AuthorizedRoute>
+            <AuthorizedRoute path='/settings'><Settings /></AuthorizedRoute>
             <UnauthorizedRoute path="/signin"><Signin /></UnauthorizedRoute>
             <UnauthorizedRoute path="/signup"><Signup /></UnauthorizedRoute>
             <UnauthorizedRoute path="/"><Landing /></UnauthorizedRoute>

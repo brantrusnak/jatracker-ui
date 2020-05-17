@@ -11,7 +11,7 @@ export const NavbarAuthorized: React.FC = () => {
     let dropdownOptions: DropdownOption[] = [
         {
             label: 'Settings',
-            callback: () => history.push('/user')
+            callback: () => history.push('/settings')
         },
         {
             label: 'Signout',
