@@ -15,8 +15,10 @@ export const App: React.FC = () => {
                 <ModalProvider>
                     <JobsProvider>
                         <Navbar />
-                        <Routes />
                         <Modal />
+                        <div className="route-container">
+                            <Routes />
+                        </div>
                     </JobsProvider>
                 </ModalProvider>
             </AuthProvider>

@@ -9,10 +9,12 @@ interface Props {
 export const JobItem: React.FC<Props> = ({job}) => {
     return (
         <div className="job">
-            <div className="job-company"> {job.company} </div>
-            <div className="job-position"> {job.position} </div>
-            <div className="job-status"> {job.status} </div>
-            <div className="job-notes"> {job.notes} </div>
+            <div className="job-company"> Company: {job.company} </div>
+            <div className="job-position"> Position: {job.position} </div>
+            <div className="job-status"> Status: {job.status} </div>
+            <div className="job-notes"> Notes: {job.notes} </div>
+            {job.resume ? <div className="job-resume"> ResumeId: {job.resume.$oid} </div> : null}
+            {job.coverletter ? <div className="job-coverletter"> CoverletterId: {job.coverletter.$oid} </div> : null}
         </div>
     )
 };

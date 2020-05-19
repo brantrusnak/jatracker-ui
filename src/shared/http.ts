@@ -5,13 +5,18 @@ export function handleErrors(response: Response) {
     return response;
 }
 
-export function getHeaders() {
+export function getAuthHeader() {
     let headers = new Headers();
-    headers.append('Accept', 'application/json');
-    headers.append('Content-Type', 'application/json');
     if (localStorage.getItem('token') !== null) {
         headers.append('Authorization', `Bearer ${JSON.parse(localStorage.getItem('token') as string) || ''}`);
     }
+    return headers;
+}
+
+export function getHeaders() {
+    let headers = getAuthHeader();
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
     return headers;
 }
 

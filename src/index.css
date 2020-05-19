@@ -13,7 +13,7 @@ body {
   width: 100%;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -21,6 +21,37 @@ body {
   outline: none;
 }
 
+div#root {
+  height: 100%;
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+label,
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+}
+
+label {
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+input[type="text"],
+input[type="password"] {
+  margin-bottom: 0.5rem;
+  border: 0;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 0.5rem;
 }

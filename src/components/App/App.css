@@ -1,3 +1,4 @@
-.App {
-  text-align: center;
+div.route-container {
+  height: calc(100% - 68px);
+  width: 100%;
 }

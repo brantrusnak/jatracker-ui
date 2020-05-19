@@ -8,6 +8,12 @@ export interface Job {
     position: string;
     status: Status;
     notes: string;
+    resume?: {
+        $oid: string;
+    };
+    coverletter?: {
+        $oid: string;
+    }
     added_by: {
         $oid: string;
     }

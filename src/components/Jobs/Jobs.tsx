@@ -9,10 +9,10 @@ import { CreateJobForm } from './CreateJobForm/CreateJobForm';
 export const Jobs: React.FC = () => {
     const jobs = useContext(JobsContext);
     const modal = useContext(ModalContext);
-    const { handleRequest } = useJobsHandler();
+    const { handleFetchJobs } = useJobsHandler();
 
     useEffect(() => {
-        handleRequest()
+        handleFetchJobs()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
