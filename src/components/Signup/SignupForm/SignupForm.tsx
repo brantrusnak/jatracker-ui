@@ -36,7 +36,7 @@ export const SignupForm: React.FC = () => {
             <label htmlFor="repeatPassword">Repeat Password</label>
             <input type="password" name="repeatPassword" onChange={handleChange} />
 
-            <input type="submit" value="Submit" />
+            <input className="primary" type="submit" value="Submit" />
         </form>
     )
 }

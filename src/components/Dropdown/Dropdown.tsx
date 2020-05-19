@@ -26,7 +26,7 @@ export const Dropdown: React.FC<Props> = ({ placeholder, options }) => {
 
     return (
         <div ref={refObject} className="dropdown-container">
-            <div className="dropdown-label" onClick={() => setShow(!show)}>{placeholder}</div>
+            <button className="primary dropdown-label" onClick={() => setShow(!show)}>{placeholder}</button>
             {show ? dropdownItems : null}
         </div>
     )

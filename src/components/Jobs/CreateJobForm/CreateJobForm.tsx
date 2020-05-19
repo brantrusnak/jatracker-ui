@@ -30,7 +30,7 @@ export const CreateJobForm: React.FC = () => {
             <label htmlFor="coverletter">Cover Letter</label>
             <input type="file" accept="application/pdf" name="coverletter" />
 
-            <input type="submit" value="Submit" />
+            <input className="primary" type="submit" value="Submit" />
         </form>
     )
 };

@@ -1,10 +1,7 @@
 div.dropdown-container {
     position: relative;
 }
-div.dropdown-container div.dropdown-label {
-    padding: 0.5rem 1rem;
-    background: white;
-    color: black;
+div.dropdown-container button.dropdown-label {
     cursor: pointer;
 }
 div.dropdown-container div.dropdown-items {

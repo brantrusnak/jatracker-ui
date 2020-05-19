@@ -32,7 +32,9 @@ code {
 
 label,
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+input[type="file"] {
   display: block;
   width: 100%;
 }
@@ -43,7 +45,8 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   margin-bottom: 0.5rem;
   border: 0;
   background: rgba(0, 0, 0, 0.05);
@@ -51,7 +54,35 @@ input[type="password"] {
   line-height: 1.5;
 }
 
+input[type="file"]{
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+  line-height: 1.5;
+}
+
 input[type="submit"] {
   display: block;
   margin-top: 0.5rem;
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  color: white;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+input[type="submit"].primary,
+button.primary {
+  background: #73c700;
+}
+
+input[type="submit"].light,
+button.light {
+  background: white;
+  color: black;
 }

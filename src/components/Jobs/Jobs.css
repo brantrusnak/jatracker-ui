@@ -1,5 +1,22 @@
-div.jobs-container{
+div.container {
+    height: 100%;
+    position: relative;
+}
+
+div.container div.jobs-container {
     display: flex;
     flex-flow: row wrap;
 }
 
+button.float {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #233d00;
+}

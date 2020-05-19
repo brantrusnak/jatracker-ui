@@ -1,13 +1,13 @@
 nav {
     width: 100%;
-    padding: 1rem;
+    padding: 0.85rem 1rem;
     display: flex;
-    background: #73c700;
+    background: white;
     color: white;
 }
 
-div.left,
-div.right {
+nav div.left,
+nav div.right {
     flex: 1;
     display: flex;
     align-items: center;
@@ -20,23 +20,14 @@ nav div.right {
     justify-content: flex-end;
 }
 
-a.logo{
+nav div.left a.logo{
     text-decoration: none;
-    border-bottom: 1px solid white;
-    color: white;
+    border-bottom: 1px solid #73c700;
+    color: #73c700;
     font-size: 1.5rem;
     padding-bottom: 0.25rem;
 }
 
-a.nav-item {
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    background: white;
-    color: black;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-}
-
-div.right .nav-item:not(:last-child){
+nav div.right > :not(:last-child){
     margin-right: 1rem;
 }

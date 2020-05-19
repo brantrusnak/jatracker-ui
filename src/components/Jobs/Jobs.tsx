@@ -28,7 +28,7 @@ export const Jobs: React.FC = () => {
             <div className="jobs-container">
                 {jobs.state.jobs.map(job => <JobItem key={job._id.$oid} job={job} />)}
             </div>
-            <button onClick={() => loadModal()}>Create</button>
+            <button className="light float" onClick={() => loadModal()}><i className="fas fa-plus fa-2x"></i></button>
         </div>
     )
 };

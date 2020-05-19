@@ -31,8 +31,6 @@ const AuthProvider = ({children}: any) => {
     const [state, dispatch] = useReducer((state: AuthState, action: AuthActions) => {
         switch (action.type) {
             case "LOGIN":
-                console.log('login dispatch ran');
-                console.log(action.payload);
                 localStorage.setItem("token", JSON.stringify(action.payload.token));
                 localStorage.setItem("user", JSON.stringify(action.payload.user));
                 return {

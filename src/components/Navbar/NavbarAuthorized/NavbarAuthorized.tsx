@@ -15,18 +15,15 @@ export const NavbarAuthorized: React.FC = () => {
         },
         {
             label: 'Signout',
-            callback: () => {
-                console.log('Removing token. Signout.');
-                auth.dispatch({type: 'LOGOUT'});
-            }
+            callback: () => auth.dispatch({ type: 'LOGOUT' })
         }
     ]
     return (
         <React.Fragment>
             <Link className="nav-item" to="/jobs">
-                Jobs
+                <button className="primary">Jobs</button>
             </Link>
-            <Dropdown placeholder={auth.state.user?.display_name as string  } options={dropdownOptions} />
+            <Dropdown placeholder={auth.state.user?.display_name as string} options={dropdownOptions} />
         </React.Fragment>
     )
 }
