@@ -20,14 +20,15 @@ nav div.right {
     justify-content: flex-end;
 }
 
-nav div.left a.logo{
+nav div.left a.logo {
     text-decoration: none;
-    border-bottom: 1px solid #73c700;
+    border-bottom: 3px solid #73c700;
     color: #73c700;
     font-size: 1.5rem;
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.15rem;
+    font-weight: bold;
 }
 
-nav div.right > :not(:last-child){
+nav div.right > :not(:last-child) {
     margin-right: 1rem;
 }
