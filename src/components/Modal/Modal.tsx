@@ -3,10 +3,10 @@ import './Modal.css';
 import { ModalContext } from '../../context/ModalContext';
 
 export const Modal: React.FC = () => {
-    // TODO: Handle offclick/handle hitting esc to close modal.
+    // TODO: Handle hitting esc to close modal.
     const modal = useContext(ModalContext);
-    const modalContainer = <div className="modal-container">
-        <div className="modal">
+    const modalContainer = <div className="modal-container" onClick={() => modal.dispatch({ type: 'HIDE' })}>
+        <div className="modal" onClick={(event) => event.stopPropagation()}>
             <button className="modal-exit" onClick={() => modal.dispatch({ type: 'HIDE' })}><i className="fas fa-times fa-2x"></i></button>
             <h2 className="modal-title">{modal.state.title}</h2>
             <div className="modal-body">

@@ -16,6 +16,7 @@ div.job div.job-options {
     right: 15px;
     color: #757575;
     cursor: pointer;
+    font-weight: bold;
 }
 
 div.job div.job-company {

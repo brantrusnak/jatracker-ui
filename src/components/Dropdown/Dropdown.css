@@ -1,5 +1,6 @@
 div.dropdown-container {
     position: relative;
+    font-weight: normal;
 }
 div.dropdown-container button.dropdown-label {
     cursor: pointer;
