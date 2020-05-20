@@ -18,8 +18,8 @@ body {
   outline: none;
 }
 
-*::-moz-focus-inner{
-  border: 0
+*::-moz-focus-inner {
+  border: 0;
 }
 
 div#root {
@@ -105,4 +105,16 @@ select {
   background: rgba(0, 0, 0, 0.05);
   padding: 0.25rem 0.5rem;
   line-height: 1.5;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 0.5rem;
+  border: 0px none;
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+  resize: vertical;
+  display: block;
 }

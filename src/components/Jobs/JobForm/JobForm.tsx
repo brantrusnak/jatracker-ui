@@ -16,7 +16,7 @@ export const JobForm: React.FC<Props> = ({ job, submitLabel, handleSubmit }) => 
         notes: job?.notes || ''
     });
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setForm({...form, [event.target.name]: event.target.value});
     }
 
@@ -39,7 +39,7 @@ export const JobForm: React.FC<Props> = ({ job, submitLabel, handleSubmit }) => 
             </select> 
 
             <label htmlFor="notes">Notes</label>
-            <input type="text" name="notes" required value={form.notes} onChange={handleInputChange} />
+            <textarea name="notes" required value={form.notes} onChange={handleInputChange} />
 
             <label htmlFor="resume">Resume</label>
             <input type="file" accept="application/pdf" name="resume" />
