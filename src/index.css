@@ -30,6 +30,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+form {
+  width: 100%;
+}
+
 label,
 input[type="text"],
 input[type="password"],
@@ -54,7 +58,7 @@ input[type="email"] {
   line-height: 1.5;
 }
 
-input[type="file"]{
+input[type="file"] {
   margin-bottom: 0.5rem;
   padding: 0.25rem 0;
   line-height: 1.5;
@@ -81,8 +85,23 @@ button.primary {
   background: #73c700;
 }
 
+input[type="submit"].alert,
+button.alert {
+  background: #fb7676;
+}
+
 input[type="submit"].light,
 button.light {
-  background: white;
+  background: #ececec;
   color: black;
+}
+
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border: 0;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
 }

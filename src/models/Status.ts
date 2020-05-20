@@ -1,1 +1,1 @@
-export type Status = '' | '' | ''; // Job Application Status'
+export type Status = 'Send' | 'Applied' | 'Interview' | 'Offer' | 'Accepted' | 'Rejected';

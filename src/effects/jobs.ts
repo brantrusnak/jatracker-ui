@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GET, POST, getAuthHeader } from "../shared/http";
+import { GET, POST, getAuthHeader, PUT, DELETE } from "../shared/http";
 import { JobsContext } from "../context/JobsContext";
 
 export const useJobsHandler = () => {
@@ -18,5 +18,18 @@ export const useJobsHandler = () => {
         handleFetchJobs();
     };
 
-    return { handleFetchJobs, handleCreateJob };
+    const handleUpdateJob = async (form: HTMLFormElement, id: string) => {
+        let header = getAuthHeader();
+        let body = new FormData(form);
+        await PUT(`http://localhost:5000/api/jobs/${id}`, body, header);
+        handleFetchJobs();
+    };
+
+    const handleDeleteJob = async (id: string) => {
+        let header = getAuthHeader();
+        await DELETE(`http://localhost:5000/api/jobs/${id}`, null, header);
+        handleFetchJobs();
+    };
+
+    return { handleFetchJobs, handleCreateJob, handleUpdateJob, handleDeleteJob };
 };

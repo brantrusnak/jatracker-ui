@@ -1,8 +1,10 @@
+import { Status } from "./Status";
+
 export interface CreateJob {
     company: string;
     position: string;
-    status: string;
+    status: Status;
     notes: string;
-    resume?: File;
-    coverletter?: File;
+    resume?: string | number | string[];
+    coverletter?: string | number | string[];
 }

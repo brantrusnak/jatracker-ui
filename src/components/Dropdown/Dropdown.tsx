@@ -4,11 +4,10 @@ import { DropdownItem } from './DropdownItem';
 import './Dropdown.css';
 
 interface Props {
-    placeholder: string;
     options: DropdownOption[];
 }
 
-export const Dropdown: React.FC<Props> = ({ placeholder, options }) => {
+export const Dropdown: React.FC<Props> = ({ options, children }) => {
     const [show, setShow] = useState<boolean>(false);
     let refObject: RefObject<HTMLDivElement> = createRef();
     useEffect(() => {
@@ -26,7 +25,9 @@ export const Dropdown: React.FC<Props> = ({ placeholder, options }) => {
 
     return (
         <div ref={refObject} className="dropdown-container">
-            <button className="primary dropdown-label" onClick={() => setShow(!show)}>{placeholder}</button>
+            <div className="dropdown-label" onClick={() => setShow(!show)}>
+                {children}
+            </div>
             {show ? dropdownItems : null}
         </div>
     )
