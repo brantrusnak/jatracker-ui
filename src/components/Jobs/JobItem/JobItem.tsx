@@ -6,6 +6,7 @@ import { EditJobForm } from '../EditJobForm/EditJobForm';
 import { Dropdown } from '../../Dropdown/Dropdown';
 import { DropdownOption } from '../../../models/Dropdown';
 import { DeleteJobConfirmation } from '../DeleteJobConfirmation/DeleteJobConfirmation';
+import { PDFGET } from '../../../shared/http';
 
 interface Props {
     job: Job
@@ -31,9 +32,19 @@ export const JobItem: React.FC<Props> = ({ job }) => {
         }
     ]
 
+    const fetchResume = async () => {
+        let pdf = await PDFGET(`http://localhost:5000/api/resume/${job._id.$oid}`) as Blob;
+        window.open(window.URL.createObjectURL(pdf));
+    };
+
+    const fetchCoverletter = async () => {
+        let pdf = await PDFGET(`http://localhost:5000/api/coverletter/${job._id.$oid}`) as Blob;
+        window.open(window.URL.createObjectURL(pdf));
+    };
+
     const files = <div className="files">
-        {job.resume ? <div className="file-resume"> <i className="fas fa-file-pdf fa-2x"></i> Resume </div> : null}
-        {job.coverletter ? <div className="file-coverletter"> <i className="fas fa-file-pdf fa-2x"></i> Cover Letter </div> : null}
+        {job.resume ? <div className="file-resume" onClick={fetchResume}> <i className="fas fa-file-pdf fa-2x"></i> Resume </div> : null}
+        {job.coverletter ? <div className="file-coverletter" onClick={fetchCoverletter}> <i className="fas fa-file-pdf fa-2x"></i> Cover Letter </div> : null}
     </div>
 
     return (
@@ -48,7 +59,6 @@ export const JobItem: React.FC<Props> = ({ job }) => {
                 <span className="job-position">{job.position}</span>
                 <span className={"job-status " + job.status.toLowerCase()}>{job.status}</span>
             </div>
-            {/* <div className="job-status"> Status: {job.status} </div> */}
             <div className="job-notes">
                 <h3>Notes</h3>
                 {job.notes}

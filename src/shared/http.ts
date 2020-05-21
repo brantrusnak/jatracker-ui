@@ -1,4 +1,5 @@
 export function handleErrors(response: Response) {
+    console.log(response);
     if (!response.ok) {
         throw Error('Error');
     }
@@ -18,6 +19,17 @@ export function getHeaders() {
     headers.append('Accept', 'application/json');
     headers.append('Content-Type', 'application/json');
     return headers;
+}
+
+function getPDFHeaders() {
+    let headers = getAuthHeader();
+    headers.append('Accept', 'application/pdf');
+    headers.append('Content-Type', 'application/pdf');
+    return headers;
+}
+
+export async function PDFGET(url: string) {
+    return await (await fetch(url, { headers: getPDFHeaders(), credentials: 'include', method: 'GET' }).then(handleErrors)).blob().catch(handleErrors);
 }
 
 export async function GET(url: string, body?: string | Blob | ArrayBufferView | ArrayBuffer | FormData | URLSearchParams | ReadableStream<Uint8Array> | null | undefined, headers?: Headers | string[][] | Record<string, string> | undefined) {
