@@ -39,4 +39,5 @@ div.modal-container div.modal div.modal-body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column;
 }

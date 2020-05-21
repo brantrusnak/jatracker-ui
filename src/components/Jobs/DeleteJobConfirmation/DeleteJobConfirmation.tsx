@@ -4,6 +4,7 @@ import { ConfirmationOption } from '../../../models/ConfirmationOption';
 import { Job } from '../../../models/Job';
 import { ModalContext } from '../../../context/ModalContext';
 import { useJobsHandler } from '../../../effects/jobs';
+import './DeleteJobConfirmation.css';
 
 interface Props {
     job: Job
@@ -30,6 +31,9 @@ export const DeleteJobConfirmation: React.FC<Props> = ({job}) => {
         }
     ]
     return (
-        <Confirmation options={options} />
+        <React.Fragment>
+            <span className="warning">This action is permanent.</span>
+            <Confirmation options={options} />
+        </React.Fragment>
     )
 };
