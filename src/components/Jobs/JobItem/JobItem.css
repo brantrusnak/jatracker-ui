@@ -19,21 +19,57 @@ div.job div.job-options {
     font-weight: bold;
 }
 
-div.job div.job-company {
+div.job div.job-heading {
+    padding: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+div.job div.job-heading span.job-company {
     font-weight: bold;
     font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    padding: 1rem;
+    margin-right: 0.5rem;
 }
-div.job div.job-position {
+
+div.job div.job-heading span.job-position {
     color: #757575;
-    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
+}
+
+div.job div.job-heading span.job-status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+div.job div.job-heading span.job-status.send {
+    background: #f49f45;
+    color: white;
+}
+
+div.job div.job-heading span.job-status.applied,
+div.job div.job-heading span.job-status.interview,
+div.job div.job-heading span.job-status.offer {
+    background: #d2d2d2;
+    color: black;
+}
+
+div.job div.job-heading span.job-status.accepted {
+    background: #73c700;
+    color: white;
+}
+
+div.job div.job-heading span.job-status.rejected {
+    background: #fb7676;
+    color: white;
+}
+
+div.job div.job-notes {
     padding: 0 1rem 1rem 1rem;
 }
-div.job div.job-status {
+
+div.job div.job-notes h3 {
+    margin-top: 0;
 }
-div.job div.job-notes {
-}
+
 div.job div.files {
     display: flex;
     justify-content: center;

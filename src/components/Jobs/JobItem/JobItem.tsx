@@ -31,6 +31,11 @@ export const JobItem: React.FC<Props> = ({ job }) => {
         }
     ]
 
+    const files = <div className="files">
+        {job.resume ? <div className="file-resume"> <i className="fas fa-file-pdf fa-2x"></i> Resume </div> : null}
+        {job.coverletter ? <div className="file-coverletter"> <i className="fas fa-file-pdf fa-2x"></i> Cover Letter </div> : null}
+    </div>
+
     return (
         <div className="job">
             <div className="job-options">
@@ -38,14 +43,17 @@ export const JobItem: React.FC<Props> = ({ job }) => {
                     . . .
                 </Dropdown>
             </div>
-            <div className="job-company"> {job.company} </div>
-            <div className="job-position"> {job.position} </div>
-            <div className="job-status"> Status: {job.status} </div>
-            <div className="job-notes"> Notes: {job.notes} </div>
-            <div className="files">
-                {job.resume ? <div className="file-resume"> <i className="fas fa-file-pdf fa-2x"></i> Resume </div> : null}
-                {job.coverletter ? <div className="file-coverletter"> <i className="fas fa-file-pdf fa-2x"></i> Cover Letter </div> : null}
+            <div className="job-heading">
+                <span className="job-company">{job.company}</span>
+                <span className="job-position">{job.position}</span>
+                <span className={"job-status " + job.status.toLowerCase()}>{job.status}</span>
             </div>
+            {/* <div className="job-status"> Status: {job.status} </div> */}
+            <div className="job-notes">
+                <h3>Notes</h3>
+                {job.notes}
+            </div>
+            {job.resume || job.coverletter ? files : null}
         </div>
     )
 };
