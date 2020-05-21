@@ -1,6 +1,11 @@
 div.container {
     height: 100%;
     position: relative;
+    padding: 1rem;
+}
+
+div.container h1 {
+    color: white;
 }
 
 div.container div.jobs-container {
@@ -9,7 +14,7 @@ div.container div.jobs-container {
 }
 
 button.float {
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     right: 1rem;
     border-radius: 50%;

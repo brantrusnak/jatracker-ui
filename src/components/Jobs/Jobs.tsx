@@ -23,8 +23,9 @@ export const Jobs: React.FC = () => {
 
     return (
         <div className="container">
-            {jobs.state.isLoading && !jobs.state.isError ? <span>loading</span> : null}
-            {!jobs.state.isLoading && jobs.state.isError ? <span>error</span> : null}
+            <h1>{jobs.state.jobs.length} Jobs</h1>
+            {jobs.state.isLoading && !jobs.state.isError ? <span>Loading...</span> : null}
+            {!jobs.state.isLoading && jobs.state.isError ? <span>Error!</span> : null}
             <div className="jobs-container">
                 {jobs.state.jobs.map(job => <JobItem key={job._id.$oid} job={job} />)}
             </div>
